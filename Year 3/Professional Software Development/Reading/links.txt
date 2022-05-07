@@ -1,0 +1,12 @@
+Commits: https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message
+Retrospectives: http://retrospectivewiki.org/index.php?title=Main_Page
+Semantic Versioning: https://semver.org/
+
+Fowler's (2006) CI: https://www.martinfowler.com/articles/continuousIntegration.html
+Brown's CI: http://aosabook.org/en/integration.html
+
+North's BDD: https://dannorth.net/introducing-bdd/
+
+Glass' Software Reuse: https://www.stickyminds.com/article/whats-wrong-software-reuse
+
+Fowler's refactoring: https://www.refactoring.com/

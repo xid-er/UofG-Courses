@@ -1,0 +1,89 @@
+package lzw;
+
+import java.io.*;
+import java.util.*;
+
+/** program to find compression ratio using LZW compression
+ */
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+
+		long start = System.currentTimeMillis();
+		String inputFileName = args[0];
+		FileReader reader = new FileReader(inputFileName);
+		Scanner in = new Scanner(reader);
+		
+		// read in the data and do the work here
+        // read a line at a time to enable newlines to be detected and included in the compression
+		Trie trieDic = new Trie();
+		int dicSize = 0;
+		int codewordLength = 8;
+		int maxDicSize = (int) Math.pow(2, codewordLength);
+		for (int i = 0; i < 128; i++) {
+			trieDic.insert("" + (char) i, 8);
+			//System.out.println("Inserted char " + (char) i + " while initialising");
+			dicSize++;
+		}
+		
+		int ogLength = 0;
+		int compressedLength = 0;
+		
+		in.useDelimiter("");
+		
+		String word = "";
+		Node node = trieDic.getRoot();
+		boolean found = false;
+		while(in.hasNext()) {
+			char current = in.next().charAt(0);
+			word += current;
+//			if (!found) {
+//				node = trieDic.search("" + current, node);
+//			} else {
+//				node = trieDic.search("" + word.charAt(0), trieDic.getRoot());
+//			}
+			//node = trieDic.search(word);
+			if (node == null) { // If word not in dic
+				if (dicSize == maxDicSize) {
+					codewordLength++;
+					maxDicSize *= 2;
+				}
+				trieDic.insert(word, codewordLength);
+				word = word.replaceAll("\n", "[newline]").replaceAll("\t", "[tab]").replaceAll(" ", "[space]");
+				System.out.println("Inserted word " + word + " with codeword length " + codewordLength);
+				dicSize++;
+				
+				compressedLength += codewordLength;
+				word = "" + current;
+				node = trieDic.getRoot();
+				found = true;
+			} else {
+				found = false;
+			}
+			ogLength++;
+		}
+		if (word.length() > 0) {
+			codewordLength = trieDic.search(word).getCodewordLen();
+			word = word.replaceAll("\n", "[newline]").replaceAll("\t", "[tab]").replaceAll(" ", "[space]");
+			System.out.println("Inserted word " + word + " with codeword length " + codewordLength);
+			compressedLength += codewordLength;
+		}
+		System.out.println(dicSize);
+		
+
+		reader.close();
+		in.close();
+		
+		int ogLengthInBits = ogLength * 8;
+		float ratio = (float) compressedLength / ogLengthInBits;
+
+		// output the results here
+		System.out.println("Original file length in bits = " + ogLengthInBits);
+		System.out.println("Compressed file length in bits = " + compressedLength);
+		System.out.println("Compression ratio = " + ratio);
+		// end timer and print elapsed time as last line of output
+		long end = System.currentTimeMillis();
+		System.out.println("Elapsed time: " + (end - start) + " milliseconds");
+	}
+
+}

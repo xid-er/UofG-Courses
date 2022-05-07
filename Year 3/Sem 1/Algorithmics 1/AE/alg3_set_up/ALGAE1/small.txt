@@ -1,0 +1,93 @@
+Algorithmics 3
+
+Assessed Exercise
+
+Finding Huffman and LZW Compression Ratios
+General
+
+This is the only assessed practical exercise for Algorithmics 3. It carries 20% of the total assessment for the module.
+As a rough guide, it is intended that an average Level 3 honours student should be able to obtain a good grade by putting
+in about 15 hours work, and you are advised not to spend significantly more time than this on the exercise. It is recommended
+that you start work on the exercise soon after it is given out - you will then be able to make best use of the dedicated lab
+sessions - see below.
+
+The exercise is to be done individually. Some discussion of the exercise among members of the class is to be expected, but
+close working together, or copying of code, in any form, is strictly forbidden - refer to the Department's Plagiarism Policy
+and Guidelines in the Level 3 Class Guide (available via moodle).
+
+Deadline for submission
+
+The hand-out date for the exercise is Thursday 22 October, by which time all the relevant material should have been covered
+in lectures.  The deadline for submission is 10:00 am on Tuesday 17 November.  The marked exercise will be returned, together
+with a detailed report, at the beginning of the second semester.  There will be lab sessions at 15:00 on Tuesday 3 and Tuesday
+10 November, during which you will have the opportunity to ask questions on the exercise, and discuss your progress with the
+course coordinator.
+
+
+Specification
+
+The purpose of the exercise is to write, in Java, two programs each of which will accept as input an arbitrary text file, and
+will produce as output the compression ratio that would be achieved if that file were to be compressed using 
+	(a) static Huffman coding, and 
+	(b) a variant of the LZW compression algorithm.
+
+Note that no actual compressed files are to be produced.  Your programs should do the minimum amount of work necessary to determine
+the compression ratio in each case.
+
+(a) In the case of static Huffman coding (based on a frequency count of the characters in the text file to be compressed), you
+should ignore the fact that, in practice, some representation of the Huffman tree would have to be stored with the compressed file
+(so that the compression ratio that you obtain will be a slight over-estimate of what could actually be achieved.)
+
+(b) In the required variation of the LZW algorithm, compression should begin with codewords of length 8. Whenever the dictionary
+becomes full the codeword length should be increased by 1, thereby doubling the size of the dictionary. There is no limit on the
+size of the dictionary.
+
+Clarifications
+* Assume that each character occupies 1 byte in uncompressed files.
+
+* The file to be compressed should be read from standard input, and the results should be written to standard output; the only
+output produced by your programs should take the following form:
+
+Original file length in bits = 12688
+Compressed file length in bits = 5926
+Compression ratio = 53.29%
+       Elapsed time: 2 milliseconds. 
+
+* The final line of output reports the execution time of the program in seconds. The code to generate this output is included in
+the skeleton programs provided. Note that it represents elapsed time, so may not be an accurate reflection of actual running time
+depending on other processes that may be executing on the computer.
+
+* For the LZW program, you should use a trie, appropriately customised, to represent the dictionary.  The trie class  provided for
+the initial Lab Exercise can be used, with appropriate changes which will be necessary if you wish your program to be efficient.
+This class will be delivered to you on set up.
+
+Submission using AMS  
+
+You should set up the exercise initially using AMS, which will deliver certain start-up files - skeleton program files, the trie
+class used in the initial lab exercise, a template report file, and several sample input files. You should expect to create additional
+input files for test purposes. 
+
+* Submit, to the labelled collection box outside the Teaching Office (F161), a plastic folder containing the following:
+* a pdf file Report.pdf generated from the Report.tex file, containing
+* a status report, which should state whether you believe that your programs are working correctly, and if not what happens when the
+program is compiled (in the case of compile-time errors) or run (in the case of run-time errors or incorrect output);
+* a written discussion explaining how, in each case, your program obtains the information needed to calculate the compression ratio,
+and justifying any implementation decisions you made;
+* The output produced by your programs on each of the sample input files provided;
+* listings of all the relevant Java source code, with appropriate comments;
+* a signed copy of the 'pink form' (the 'own work' declaration).
+
+You should also submit your solution using AMS so that your Java code is available for checking and testing. When you submit, be sure
+that your directory Workspace/Algs3/Ass_Ex contains the following:
+* Folders Huffman and LZW containing all your .java files for the Huffman solution and the LZW solution, respectively
+* In each folder there should be a class Main.java containing your main method; apart from this there can be any number of other .java
+files and other folders corresponding to packages if you wish. But ensure that any redundant files are removed - all the .java files in
+these folders will be collected by AMS.
+Marking scheme   
+The exercise carries 20 marks, distributed as follows:
+* Huffman implementation, correctness and efficiency:  	6 marks
+* LZW implementation, correctness and efficiency:  		6 marks
+* Report, quality of submitted code, overall presentation: 	6 marks
+* Outputs from acceptance test:  				2 marks
+
+

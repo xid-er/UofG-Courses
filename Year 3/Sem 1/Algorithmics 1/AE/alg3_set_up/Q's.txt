@@ -1,0 +1,7 @@
+Huffman:
+Is it okay to use PriorityQueue (faster small, slower large)
+
+LZW:
+Do we need delete()?
+How do we continue to next line without going to next line (charAt)?
+How to update codeword length?

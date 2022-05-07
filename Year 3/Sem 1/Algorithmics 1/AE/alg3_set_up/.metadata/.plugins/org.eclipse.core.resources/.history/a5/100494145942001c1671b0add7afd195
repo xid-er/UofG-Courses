@@ -1,0 +1,10 @@
+package huffman;
+
+public class Node {
+	char character;
+	int weight;
+	public Node(char c, int w) {
+		this.character = c;
+		this.weight = w;
+	}
+}

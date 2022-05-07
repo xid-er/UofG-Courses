@@ -1,0 +1,5 @@
+Danielius picked up and was responsible for much more than necessary because the teammates in his mini-teams sometimes slacked. He was basically responsible for all of backend for the project, including almost all of the functionality of the website (which, admittedly, I could not help much in because I was focused on other, less daunting aspects of the project). He wrote a lot of SQL and did a lot of thinking about the database systems.
+
+All others sometimes did little work, especially with integrating GitLab into the project, but Khena especially was hard to communicate with at the start of the project as she sometimes missed meetings and did not explain why or warn that she would, including even a customer day when she was supposed to be the meeting chair.
+
+Rawan and Declan researched a huge amount for their responsibilities, but sometimes they did not do the work they promised to do, including GitLab.

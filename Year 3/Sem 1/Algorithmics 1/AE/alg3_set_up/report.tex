@@ -1,0 +1,48 @@
+\documentclass[]{article}
+            
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx}
+ 
+\title{Algorithmics I -- Assessed Exercise\\ \vspace{4mm} 
+Status and Implementation Reports}
+
+\author{\bf Insert your name\\ \bf and matriculation number here}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Status report}
+
+In the event of a non-working program, this section should state clearly what happens when the program is compiled (in the case of compile-time errors) or run (in the case of run-time errors).  
+
+Otherwise, this section should state whether you believe that your programs are working correctly. If so, indicate the basis for your belief, if not comment on what you think might be the problem.
+
+\section*{Implementation report}
+
+\subsection*{Compression ration for the Huffman algorithm}
+
+Here, explain how you implemented an approach to compute the compression ration for the Huffman algorithm. Include a discussion of any steps that you took to improve efficiency.
+
+\subsection*{Compression ration for the LZW algorithm}
+
+Here, explain how you implemented an approach to compute the compression ration for the LZW algorithm. Include a discussion of any steps that you took to improve efficiency.
+
+
+\section*{Empirical results}
+
+This section is part of the marking scheme "Outputs from test data: 2 marks".
+\\ \\
+If the program fails to terminate in, say, two minutes, simply report non-termination. To print your outputs you can use the verbatim environment:
+
+\begin{verbatim}
+Input file small.txt Huffman algorithm
+
+Original file length in bits = 12688
+Compressed file length in bits = 5926
+Compression ratio = 0.4671
+Elapsed time: 2 milliseconds
+\end{verbatim}
+
+\end{document}

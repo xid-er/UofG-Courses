@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\karli\OneDrive\Documents\Uni\Year 3\Algorithmics 1\AE\alg3_set_up\.metadata\.plugins\org.eclipse.jdt.core
+2337606709.index
+2225079988.index

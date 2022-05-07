@@ -1,0 +1,33 @@
+Huffman
+
+Original file length in bits = 46392
+Compressed file length in bits = 26521
+Compression ratio = 0.5717
+Elapsed time: 86 milliseconds
+
+Original file length in bits = 7096792
+Compressed file length in bits = 4019468
+Compression ratio = 0.5664
+Elapsed time: 136 milliseconds
+
+Original file length in bits = 25632616
+Compressed file length in bits = 14397675
+Compression ratio = 0.5617
+Elapsed time: 229 milliseconds
+
+LZW
+
+Original file length in bits = 46392
+Compressed file length in bits = 24832
+Compression ratio = 0.5353
+Elapsed time: 63 milliseconds
+
+Original file length in bits = 7096792
+Compressed file length in bits = 2620426
+Compression ratio = 0.3692
+Elapsed time: 257 milliseconds
+
+Original file length in bits = 25632616
+Compressed file length in bits = 9158986
+Compression ratio = 0.3573
+Elapsed time: 609 milliseconds
