@@ -1,0 +1,167 @@
+--------------------------------------------------------------------------------
+    LAB 03                                                      BASH SCRIPTING
+--------------------------------------------------------------------------------
+
+    Answer all questions for Lab03 in this file. Questions or tasks which 
+    require you to edit another file have the name of the file already 
+    entered for you.
+
+--------------------------------------------------------------------------------
+    QUESTIONS
+--------------------------------------------------------------------------------
+
+------------------
+    QUESTION 1 
+------------------
+
+Provide a Task1.sh							[5]
+#!/bin/bash
+
+# Deletes empty files
+# Author: Karlis Siders
+
+for file in *
+do
+	# Check that file is empty
+	if [ ! -s $file ]
+	then
+		# Input
+		echo "Do you want to delete ${file}? [y/n]"
+		read answer
+		# If yes, delete file
+		if [ "$answer" = "y" ]
+		then
+			rm $file
+		fi
+	fi
+done
+
+exit 0
+------------------
+    QUESTION 2 
+------------------
+
+Provide a Task2.sh							[4]
+#!/bin/bash
+
+# Prints out word count of each line of help-read.txt
+# Author: Karlis Siders
+
+cat help-read.txt | while read line
+do
+	echo $line | wc -m
+done
+
+exit 0
+
+// wc -w prints word counts -2 marks 4/6
+------------------
+    QUESTION 3 
+------------------
+
+Provide a Task3.sh							[3]
+#!/bin/bash
+
+# A function that checks for directory, creates it (if necessary) and moves into it
+# Author: Karlis Siders
+
+create_and_in(){
+	if [ ! -d $1 ]
+	then
+		mkdir ${1}
+	fi
+	cd ./$1
+}
+
+exit 0
+
+// did not test/call function -2 // marks 3/5
+------------------
+    QUESTION 4
+------------------
+
+Provide a Task4.sh							[6]
+#!/bin/bash
+
+# Checks parameters to see if they're files/directories/don't exist
+# Author: Karlis Siders
+
+check(){
+	for file in $@
+	do
+		# Check if the file is a directory
+		if [ -d $file ]; then
+			echo "$file is a directory."
+		
+		# Check if it's a regular file
+		elif [ -f $file ]; then
+			echo "$file is a regular file."
+
+		# Check if it exists
+		elif [ ! -e $file ]; then
+			echo "$file does not exist."
+		fi
+	done
+}
+
+exit 0
+
+// need to test check for example check Task3.sh -1 mark
+------------------
+    QUESTION 5 
+------------------
+
+Provide a Task5.sh							[20]
+#!/bin/bash
+
+# Decodes from base 64 the first and last lines of each file in a directory
+# Warning: Assumes script is in /data/
+# Author: Karlis Siders
+
+# Decode given string from base64
+process(){
+	echo $1 | base64 -d
+}
+
+# Check that at least 1 argument is given.
+if [ $# -eq 0 ]
+then
+	>&2 echo "No arguments given."
+	exit 1
+fi
+
+# Loop through all command-line given files
+for file in $@
+do
+	# Check that each file exists
+	if [ ! -f $file ]
+	then
+		>&2 echo "$file is not a file"
+		exit 2
+	fi
+
+	# Pass 1 line long head and tail to process()
+	head_base=$(head $file -n 1)
+	process $head_base
+	tail_base=$(tail $file -n 1)
+	process $tail_base
+done
+
+exit 0
+
+/ 1 mark for interpreter directive
+/ 2 marks for checking arguments and exiting with code 1
+/ 2 marks for checking file and exit code 2
+/ 3 marks for looping over each arguement 
+/ 4 marks for function which decodes a string using base 64
+/ 2 marks for processing head of file
+/ 2 marks for processing tail of file
+/ 1 mark for succesful status exit code 0
+/ 3 marks for comments 
+
+20/20
+
+
+--------------------------------------------------------------------------------
+    FINISHED LAB 04                                             MARKS: 38/43
+--------------------------------------------------------------------------------

@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------
+    LAB 06                                                      GDB & DEBUGGING
+--------------------------------------------------------------------------------
+
+    Answer all questions for Lab06 in this file. Questions or tasks which 
+    require you to edit another file have the name of the file already 
+    entered for you.
+
+--------------------------------------------------------------------------------
+    QUESTIONS
+--------------------------------------------------------------------------------
+
+------------------
+    QUESTION 1 
+------------------
+
+A)									[1]
+DEBUGCFLAGS=-g
+B)  									[2]
+Segmentation fault (core dumped)
+gdb --tui ./myprog
+C) 									[2]
+b 1
+D) 									[2]
+generateRandomData(data, SIZE_OF_DATA);
+E) 									[1]
+s
+F) 									[2]
+Program	received signal	SIGSEGV, Segmentation fault.
+0x00000000004006a5 in generateRandomData (data=0x7fffffffdf20, len=10)
+    at util.c:10
+Line 10
+G) 									[2]
+p dataptr
+0x0
+H)  									[3]
+p *dataptr
+Cannot access memory at address 0x0
+Memory addresses are not updated properly, the pointer is still pointing to NULL
+I)  									[2]
+Continuous lines of:
+[increasingly negative number]: 0
+J) 									[1/2]
+Line 13
+
+/*
+Any reasonable answer, likely line 12 as we are no longer segfaulting and could say we've debugged the function. They may state that there could still be a problem in the function and so should go back and look some more. Any reasonable answer showing that they are thinging about the problem is acceptable.
+
+*/
+K) 									[2]
+{52, 44, 85, 78, 94, 95, 39, 42, 99, 32}
+L)									[1]
+watch i
+M) 									[2]
+i decreases each iteration of loop
+After first iteration:
+Hardware watchpoint 3: i
+Old value = 0
+New value = -1
+N) 									[1/2]
+The loop variable i decreases and underflows the data array, going out of bounds on the negative side.
+O) 									[2]
+Change i-- to i++
+--------------------------------------------------------------------------------
+    FINISHED LAB 06                                             MARKS: 27/28
+--------------------------------------------------------------------------------

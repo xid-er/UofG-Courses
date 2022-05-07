@@ -1,0 +1,119 @@
+--------------------------------------------------------------------------------
+    LAB 01                               An introduction to the command line    
+--------------------------------------------------------------------------------
+
+    Answer all questions for Lab01 in this file.
+
+--------------------------------------------------------------------------------
+    QUESTIONS - Files and Directories
+--------------------------------------------------------------------------------
+
+------------------
+    QUESTION 1
+------------------
+									[1]
+ls: cannot access experiment: No such file or directory
+------------------
+    QUESTION 2 
+------------------
+									[1]
+cp -R ~/experiment ~/experiments/exp1
+------------------
+    QUESTION 3
+------------------
+									[1]
+It was not empty.
+------------------
+    QUESTION 4
+------------------
+									[1]
+rm -r experiment
+------------------
+    QUESTION 5
+------------------
+
+A) 									[1]
+-r sorts in reverse order, -R lists recursively.
+B)  									[1]
+Does not ignore entries starting with '.'.
+C) 									[1]
+They start with a period.
+D) 									[1]
+.PhysicsIsFun
+------------------
+    QUESTION 6
+------------------
+
+A) 									[1]
+'.' is the current directory, and '..' is the parent directory.
+B)  									[1]
+ls -A
+------------------
+    QUESTION 7 
+------------------
+
+A)  									[1]
+ls -S
+B) 									[1]
+ls --sort=time
+-------------------
+    QUESTION 8 
+-------------------
+
+A)									[1]
+cd ..
+cd ..
+B)									[1]
+cd ~/experiments
+-------------------
+    QUESTION 9 
+-------------------
+    
+A)									[1]
+less -N generate.sh
+B) 									[1]
+exit 1
+-------------------
+    QUESTION 10
+-------------------
+
+A)									[1]
+10
+B)									[1]
+head generate.sh -n 5
+C)									[1]
+wc generate.sh -l
+
+--------------------------------------------------------------------------------
+    QUESTIONS - File Permissions
+--------------------------------------------------------------------------------
+
+-------------------
+    QUESTION 11
+-------------------
+
+A) 									[1]
+The user can read and write; the group can read and write; others can execute.
+B)  									[1]
+chmod a-wx,u+wx test
+-------------------
+    QUESTION 12
+-------------------
+									[1]
+The permissions start with 'd'.
+-------------------
+    QUESTION 13
+-------------------
+
+A) 									[1]
+With '-i' option.
+B) 									[1]
+With '-f' option.
+-------------------
+    QUESTION 14
+-------------------
+									[1]
+Sssshhh, it's a secret :)
+--------------------------------------------------------------------------------
+    FINISHED LAB 01                                             MARKS: XX/25    
+--------------------------------------------------------------------------------

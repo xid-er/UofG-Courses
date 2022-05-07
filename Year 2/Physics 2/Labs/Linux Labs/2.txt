@@ -1,0 +1,109 @@
+--------------------------------------------------------------------------------
+    LAB 02                                       Advanced Command Line Usage    
+--------------------------------------------------------------------------------
+
+    Answer all questions for Lab02 in this file.
+
+
+--------------------------------------------------------------------------------
+    QUESTIONS - Managing Processes
+--------------------------------------------------------------------------------
+
+------------------
+    QUESTION 1
+------------------
+
+A)									[1]  
+1.21 (1 min), 1.01 (5 mins), 1.20 (15 mins)
+B) 									[1]  // Depending on system but likely in the range of 75-200
+1
+C) 									[1]
+top -u username
+------------------
+    QUESTION 2 
+------------------
+									[1]
+Starts the process of running the command in the background.
+
+------------------
+    QUESTION 3 
+------------------
+									[2]
+ps -A | wc -l
+
+--------------------------------------------------------------------------------
+    QUESTIONS - Variables and the Path Variable
+--------------------------------------------------------------------------------
+
+------------------
+    QUESTION 4 
+------------------
+									[2]
+Hidden files could have malicious programs that are inadvertently added 
+after adding the directory, and having many commands increases risk of 
+accidentally running commands that the user didn't intend to run.
+    
+------------------
+    QUESTION 5 
+------------------
+
+A=Apple
+B=Ball
+C=Cat
+
+A)  									[1]
+Apple
+B)  									[1]
+AppleBall
+C)  									[1]
+[empty]
+D)  									[1]
+[empty]
+E)  									[1]
+Catat
+F)  									[1]
+Apple Ball Cat
+G)  									[1]
+$A $B $C
+H)  									[1]
+$A
+
+--------------------------------------------------------------------------------
+    QUESTIONS - Pipes and Redirection 
+--------------------------------------------------------------------------------
+    
+------------------
+    QUESTION 6 
+------------------
+									[2]
+'uniq' does not detect repeated lines unless they  are  adjacent.
+------------------
+    QUESTION 7 
+------------------
+
+A)  									[1]
+'grep' searches a given file for a given regex pattern and outputs lines
+containing that pattern.
+B)  									[1]
+grep Chapter Bash-Beginners-Guide.txt
+    
+------------------
+    QUESTION 8 
+------------------
+									[4]
+It sorts the commands used in the bash terminal, then it counts the unique
+commands, sorts the output according to string numerical value, gets the
+last part of the sorted and counted commands and redirects this output by
+saving it to commands.txt.
+
+// Did not explicitly say lists users 10 most used commands 4/5
+    
+-------------------
+    QUESTION 9 
+-------------------
+									[2]
+'>' overwrites the file, '>>' appends
+
+--------------------------------------------------------------------------------
+    FINISHED LAB 02                                             MARKS: 25/27    
+--------------------------------------------------------------------------------

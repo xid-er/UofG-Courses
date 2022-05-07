@@ -1,0 +1,93 @@
+--------------------------------------------------------------------------------
+    LAB 05     			                             GNU Make and Git 
+--------------------------------------------------------------------------------
+
+    Answer all questions for Lab05 in this file. Questions or tasks which 
+    require you to edit another file have the name of the file already 
+    entered for you.
+
+--------------------------------------------------------------------------------
+    QUESTIONS
+--------------------------------------------------------------------------------
+
+------------------
+    QUESTION 1 
+------------------
+
+A)									[2]
+git clone https://bitbucket.org/glaphysp2t/lab5-example
+git init <dir>
+B)									[2]
+git log --oneline
+A simple program that prints out an ASCII histogram based on a test set
+C) 									[1]
+Updated README.md
+D)									[1]
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   README.md
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	draw.o
+#	histogram
+#	histogram.o
+#	util.o
+
+E) 									[2]
+git add README.md
+git commit -m "Update README with descr of program"
+commit ac2bee163da593787d43e5d82416e69c92a515ac
+Author: Karlis Siders <2467273s@brutha0.physics.gla.ac.uk>
+Date:   Wed Feb 24 14:50:27 2021 +0000
+
+    Update README with descr of program
+F) 									[1]
+git branch myfeature
+G) 									[2]
+git checkout myfeature
+  master
+* myfeature
+H) 									[1]
+commit 6e9a2d0b62ad262fc50d58aa299c792d0218b69c
+Author: Karlis Siders <2467273s@brutha0.physics.gla.ac.uk>
+Date:   Wed Feb 24 14:59:00 2021 +0000
+
+    Add libraries used to README
+------------------
+    QUESTION 2
+------------------
+
+A)									[1]
+The name of the target.
+B)									[1]
+The list of prerequisites for the target being compiled.
+C)									[1]
+The name of the first prerequisite.
+D)									[1]
+The list of prerequisites that are newer than the target and therefore must be compiled first.
+------------------
+    QUESTION 3
+------------------
+
+A) Submit modified Makefile						[5]
+In zip
+B) Submit modified Makefile						[2]
+In zip
+C) Submit modified C & H files						[3]
+In zip
+D) Submit sim.data							[2]
+In zip
+E) Submit graph image							[2]
+In zip
+F) 									[3]
+math.h with -lm because it's not linked by default. The function - sqrt().
+G)									[2]
+Edited
+--------------------------------------------------------------------------------
+    FINISHED LAB 05                                             MARKS: 35/35
+--------------------------------------------------------------------------------    

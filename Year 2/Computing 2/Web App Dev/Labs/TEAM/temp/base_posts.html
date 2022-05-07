@@ -1,0 +1,124 @@
+{% extends 'glasgo/base.html' %}
+{% load staticfiles %}
+
+{% block index_banner %}
+<div class="container-fluid fixed-top p-0">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom bg-white">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img src="{% static 'images/g-logo.png' %}" alt="GlasGO logo" width="32" height="32">
+    </a>
+
+    {% block sort_posts %}
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="#" id="top" class="nav-link px-2 link-secondary">Top</a></li>
+      <li><a href="#" id="recent" class="nav-link px-2 link-dark">Recent</a></li>
+      {% block favourites %}
+      <li><a href="#" id="favourites" class="nav-link px-2 link-dark">Favourites</a></li>
+      {% endblock %}
+    </ul>
+    {% endblock %}
+
+    <div class="col-md-3 text-end">
+      {% if user.is_authenticated %}
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a class="nav-link" href="#">{{ user.username }}</a></li>
+        <li><a class="nav-link" href="{% url 'glasgo:logout' %}">Logout</a></li>
+      </ul>
+      {% else %}
+      <ul class="nav col-md-auto text-end">
+        <li><a href="{% url 'glasgo:login' %}"><img src="{% static 'images/person-circle.svg' %}" alt="Account" width="32" height="32"></a></li>
+        <li><a href="{% url 'glasgo:login' %}">Login</a></li>
+      </ul>
+      {% endif %}
+    </div>
+  </header>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid pt-5">
+  <div class="row">
+
+    <div class="left col-md-3 position-fixed">
+      {% block left %}
+      {% endblock %}
+    </div>
+
+    <div class="middle col-md-6 offset-sm-3">
+      {% block posts %}
+        {% if recent %}
+          {% for post in recent %}
+            <div class="justify-content-center">
+              <div class="card bg-light m-4 border-right-0 border-top-0 border-bottom-0
+              {% if post.post_category == 'EVE' %} border-danger
+              {% elif post.post_category == 'CS' %} border-primary
+              {% elif post.post_category == 'SoG' %} border-success
+              {% elif post.post_category == 'O' %} border-warning
+              {% endif %}">
+                <div class="row">
+                  <div class="col-md-2">
+                    {{ post.post_likes }}
+                    {% if post in liked_posts %}
+                      <input type="image" src="{% static 'images/like-fill.svg' %}" class="like" id="{{ post.post_number }}" width="32" height="32"></input>
+                    {% else %}
+                      <input type="image" src="{% static 'images/like.svg' %}" class="like" id="{{ post.post_number }} width="32" height="32""></input>
+                    {% endif %}
+                    <a href="{% if post.post_type == 'URL' %} {{ post.post_link }}
+                             {% else %} #
+                             {% endif %}"><img src="{% if post.post_type == 'IMG' %} {% static 'images/image.svg' %}
+                                                    {% elif post.post_type == 'URL' %} {% static 'images/link.svg' %}
+                                                    {% elif post.post_type == 'TXT' %} {% static 'images/text.svg' %}
+                                                    {% endif %}"
+                                                    width="32" height="32"></img></a>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <a href="">
+                      <h5 class="card-title">{{ post.post_title }}</h5></a>
+                      <p class="card-text">{{ post.user_name }}</p>
+                      <p class="card-text"><small class="text-muted">{{ post.post_date_time }}</small></p>
+                    </div>
+                  </div>
+                </div>
+                {% if post.post_type == "IMG" %}
+                  <img class="card-img-bottom" src="{{ MEDIA_URL }}{{ post.post_pic }}" alt="Post image">
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>There are no Posts yet... :(</p>
+        {% endif %}
+      {% endblock %}
+    </div>
+
+    <div class="right col-md-3 position-fixed offset-sm-9">
+      {% block side %}
+        <div class="sidebar-sticky">
+          {% block make_post %}
+            {% if user.is_authenticated %}
+              <a id="addPostBtn" class="btn btn-primary"  href="{% url 'glasgo:add_post' %}">Add a New Post!</a>
+              <br>
+              <br>
+            {% endif %}
+          {% endblock %}
+          <label>Categories:</label>
+          <br>
+          <input type="checkbox" checked data-toggle="toggle" data-on="Events"
+            data-off="Events" data-onstyle="danger" data-style="ios">
+          <br>
+          <input type="checkbox" checked data-toggle="toggle" data-on="Cool Spots"
+            data-off="Cool Spots" data-style="ios">
+          <br>
+          <input class="btn-block" type="checkbox" checked data-toggle="toggle" data-on="Shots of Glasgow"
+            data-off="Shots of Glasgow" data-onstyle="success" data-style="ios">
+          <br>
+          <input type="checkbox" checked data-toggle="toggle" data-on="Other"
+            data-off="Other" data-onstyle="warning" data-style="ios">
+        </div>
+      {% endblock %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}
