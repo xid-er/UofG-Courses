@@ -1,0 +1,52 @@
+add R3,R9,R4 = 0394
+sub R2,R12,R1 = 12c1
+load R8,x[R0] = f801 00c3
+lea R9,42[R0] = f900 002a
+store R10,y[R0] = fa02 00f8
+
+p := &x:
+load R1,p[R0]
+lea R1, x[R0]
+
+q := p:
+load R2,q[R0]
+add R2,R0,R1
+
+*q = *q + 1
+lea R3,1[R0]
+load R4,0[R2]
+add R4,R4,R3
+
+
+loop:
+ if x >= y goto end
+ S1
+ 
+ if x != p goto else
+ S2
+ goto mid
+
+else:
+ i := x
+
+loop2:
+ if i > y goto mid
+ S3
+ S4
+ goto loop2
+
+mid:
+S5
+
+end:
+S6
+
+
+ load  R1,x[R0]
+ load  R2,y[R0]
+ load  R3,p[R0]
+ load  R4,q[R0]
+ cmplt R5,R1,R2
+ jumpt R5,L[R0]
+ cmplt R5,R3,R4
+ jumpt R5,L[R0]

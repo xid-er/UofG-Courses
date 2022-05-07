@@ -1,0 +1,11 @@
+File reading
+  create a list of lists (city, x, y)
+
+GUI
+  make city layout with labels and circles
+  implement drawing lines without NN Algo
+
+NN Algo
+  implement without GUI
+
+Combine GUI and NN Algo

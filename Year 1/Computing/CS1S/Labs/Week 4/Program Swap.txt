@@ -1,0 +1,11 @@
+; Program Swap
+ load R1,x[R0] ; R1 := x
+ load R2,y[R0] ; R1 := y
+
+ store R1,y[R0]         ; y := x
+ store R2,x[R0]         ; x := y
+
+ trap R0,R0,R0
+
+x data 1
+y data 2

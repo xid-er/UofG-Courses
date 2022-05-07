@@ -1,0 +1,22 @@
+ load R1,a[R0]
+ load R2,x[R0]
+ load R3,y[R0]
+ lea R4,2[R0]
+
+ cmpgt R5,R2,R3
+ jumpt R5,greater[R0]
+ 
+ store R2,a[R0]
+ load R1,a[R0]
+ jump end[R0]
+
+greater store R3,a[R0]
+ load R1,a[R0]
+
+end mul R1,R1,R4
+ store R1,a[R0]
+ trap R0,R0,R0
+
+a data 0
+x data 3
+y data 20

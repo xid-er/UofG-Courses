@@ -1,0 +1,9 @@
+ load R1,a[R0]
+ load R2,b[R0]
+ sub R3,R1,R2
+ store R3,x[R0]
+ trap R0,R0,R0
+
+a data 20
+b data 13
+x data 0

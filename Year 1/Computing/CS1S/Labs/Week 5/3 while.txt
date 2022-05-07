@@ -1,0 +1,23 @@
+ load R1,sum[R0]
+ load R2,i[R0]
+ load R3,n[R0]
+ lea R4,1[R0]
+
+while
+ cmplt R5,R2,R3
+ jumpt R5,loop[R0] ; if i < n, jump to loop
+ jump end[R0]
+
+loop 
+ add R1,R1,R2 ; sum := sum + i
+ add R2,R2,R4 ; i := i + 1
+ jump while[R0] ; jump to while
+
+end
+ store R1,sum[R0]
+ store R2,i[R0]
+ trap R0,R0,R0
+
+sum data 0
+i data 0
+n data 4
