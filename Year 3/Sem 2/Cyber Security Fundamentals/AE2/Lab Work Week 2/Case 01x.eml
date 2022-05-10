@@ -1,0 +1,52 @@
+Delivered-To: mariaevangelopoulou87@gmail.com
+Received: by 2002:a4a:52cd:0:0:0:0:0 with SMTP id d196csp4101874oob;
+        Sun, 24 Feb 2019 14:49:07 -0800 (PST)
+X-Google-Smtp-Source: AHgI3IbEOFyDAjnbT5vMHT+a+Qhfqb0Nw39gOpwhbd3GJkhI0Yq1AfzKcK9dEc6NudKOEK6Qqf2m
+X-Received: by 2002:adf:b784:: with SMTP id s4mr10162248wre.155.1551048547023;
+        Sun, 24 Feb 2019 14:49:07 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1551048547; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JW3LhZHIJRkwpc2c0O3aAK5sRCXZaMzPHg9WjQ92sHyh33dHnHM9AaJjfL/8I9JO2T
+         SZmhJ7PkL9QaaGY/BIEwLz58Va7XYz5FBtsGShRnKbd8D05AolfbBVxjXVeWO0ywLCRK
+         B0Bv3e9CgZIUPIsqAqyuLfbzUqfFNGuruyghB+MiTQRTsITwZYnVSDfbf8LMhelL1Izh
+         WkxdOCToPEKbFOb3EtxhKuXTwo7RxeGxihtB8S7tCtE3G8vo2dWWw1bfNp984TAc02RO
+         r/xiDxpok67ok3CoNXovHg335T8L17ioorEpgp5k4QpPXjDE0Usg9ZsXaU2xFkTq7IcW
+         fzLQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:message-id:reply-to:errors-to:importance:from:subject:to;
+        bh=FZXPgJDz8ZOgvjq4hi36JiKd5nQUmuO03hldgIQtLlY=;
+        b=uvWpuRCGL8A/Hq59NHxoAeCJ5reYrwatcztWIgp+3LRtZmMmr4o4kvK6PBX2RNfYDS
+         q3WZcpCNiG+/224v5XEqfr2FAyVxDqNZMuTtQo7TM+d3QKSnSm5IVcNbpQhynSFqK6QL
+         ICOD6YjBXCE06Wa6udU9oShCCCg2azJffrQmRtNIjq479ee/2N2fbmQYM0++3fuBgIyB
+         VfdthKs0V/SNx5MqM1hkRPLjEPzIiGUPuQp4JfYEGjONubCuMNW9Mb1fu+07EMQnWXel
+         aexYXPRWgkpZis0LDrHwpxvJz3VsrLnwr1BY7kES2ORpagIKI+TXf2uyVvC+E3l7NfKa
+         9ipQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=neutral (google.com: 46.167.245.207 is neither permitted nor denied by best guess record for domain of security@gla.ac.uk) smtp.mailfrom=security@gla.ac.uk
+Return-Path: <security@gla.ac.uk>
+Received: from localhost (emkei.cz. [46.167.245.207])
+        by mx.google.com with ESMTPS id f77si4370373wme.16.2019.02.24.14.49.06
+        for <mariaevangelopoulou87@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 24 Feb 2019 14:49:07 -0800 (PST)
+Received-SPF: neutral (google.com: 46.167.245.207 is neither permitted nor denied by best guess record for domain of security@gla.ac.uk) client-ip=46.167.245.207;
+Authentication-Results: mx.google.com;
+       spf=neutral (google.com: 46.167.245.207 is neither permitted nor denied by best guess record for domain of security@gla.ac.uk) smtp.mailfrom=security@gla.ac.uk
+Received: by localhost (Postfix, from userid 33)
+	id 4D1ACD5492; Sun, 24 Feb 2019 23:49:04 +0100 (CET)
+To: mariaevangelopoulou87@gmail.com
+Subject: Important Information
+From: "Glasgow Security" <security@gla.ac.uk>
+X-Priority: 3 (Normal)
+Importance: Normal
+Errors-To: security@gla.ac.uk
+Reply-To: security@gla.ac.uk
+Content-Type: text/html; charset=utf-8
+Message-Id: <20190224224906.4D1ACD5492@localhost>
+Date: Sun, 24 Feb 2019 23:49:04 +0100 (CET)
+
+<p style="text-align: justify;">Dear User,</p>
+<p style="text-align: justify;">We are contacting you as we have identified that your account may have been a target and your details may be exposed.</p>
+<p style="text-align: justify;">Please click the link below to read further details. <a href="http://www.digitalkingdomsecurity.com">www.gla.ac.uk/security.info </a></p>
+<p style="text-align: justify;">Regards,</p>
+<p style="text-align: justify;">Glasgow Cyber Security team</p>
