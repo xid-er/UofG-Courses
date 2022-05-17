@@ -1,0 +1,11 @@
+clang -Wall -Werror -o tldmonitor tldmonitor.o date.o tldlist.o
+./tldmonitor 12/12/2000 12/12/2005 large.txt
+./tldmonitor 12/12/2000 12/12/2005 small.txt
+./tldmonitor 01/12/2017 31/12/2018 given.txt
+
+Memory leak check:
+valgrind --leak-check=full [full command]
+
+Should give no output
+./tldmonitor 01/01/2017 01/09/2020 <small.txt | sort -n | diff - small.out
+./tldmonitor 01/01/2017 01/09/2020 <large.txt | sort -n | diff - large.out

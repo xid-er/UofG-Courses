@@ -1,0 +1,21 @@
+Multithread part 4 of main()
+
+Make work queue thread-safe:
+* Implement locking mechanism on the queue
+ ( can get away with locking the whole queue )
+MUTEX - prevents race conditions, etc
+
+struct threadsafe_map {
+	std::mutex m;
+	std::unordered_map<...> insideMap;
+
+	public threadsafe_find(){
+		m.lock();
+		result = insideMap.find(...);
+		return result;
+	}
+}
+
+1. make 1 thread
+2. make more threads
+3. make for loop ( vector storing all of them)

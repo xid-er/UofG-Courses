@@ -1,0 +1,4 @@
+clang++ -std=c++17 ... -lpthread
+
+time ./dependencyDiscoverer -Itest test/*.c test/*.l test/*.y > temp
+../dependencyDiscoverer *.y *.l *.c | diff - output
